@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="点击切换显示状态 " @click="changeIsShow">
+        <img src="image/frog.jpg" v-show="isShow" alt="">
+        <input type="button" value="年龄累加 " @click="addAge">
+        <img src="image/bg1.jpg" v-show="age>=18" alt="">
+    </div>
+   
+<script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+      isShow:false,
+      age:15
+      },
+      methods:{
+          changeIsShow:function(){
+              this.isShow=!this.isShow;
+          },
+          addAge:function(){
+              this.age++;
+          }
+      },
+    })
+</script>
+
+</body>
+</html>
